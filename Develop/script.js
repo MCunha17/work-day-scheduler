@@ -46,7 +46,13 @@ $(".saveBtn").on("click", function () {
   localStorage.setItem(id, description);
 });
 
-
+// Load saved events from Local Storage
+for (let i = 0; i < timeBlocks.length; i++) {
+  let description = localStorage.getItem(timeBlocks[i].id);
+  if (description !== null) {
+    $(`#${timeBlocks[i].id} .description`).val(description);
+  }
+}
   // Instructions
   // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
   // the code isn't run until the browser has finished rendering all the elements
