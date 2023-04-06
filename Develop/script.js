@@ -12,8 +12,8 @@ $(document).ready(function() {
       .addClass("alert alert-success mt-3")
       .text(message);
 
-    // Display the message above the table
-    $("#currentDay").before(messageEl);
+    // Display message at bottom of the header
+    $("header").append(messageEl);
   }
 
   // Time-blocks for standard business hours

@@ -12,6 +12,10 @@ textarea {
   padding: 10px;
 }
 
+header {
+  border-bottom: 4px solid black;
+}
+
 .description {
   white-space: pre-wrap;
 }
