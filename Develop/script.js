@@ -29,7 +29,10 @@ let descriptionEl = $("<textarea>")
   .addClass("col-8 col-md-10 description")
   .attr("id", timeBlock.id)
   .val(timeBlock.description);
-let saveBtn
+let saveBtn = $("<button>")
+  .addClass("btn saveBtn col-2 col-md-1")
+  .attr("aria-label", "save")
+  .html("<i class='fas fa-save' aria-hidden='true'></i>");
   
   // Instructions
   // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
