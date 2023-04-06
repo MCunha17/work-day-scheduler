@@ -53,6 +53,11 @@ for (let i = 0; i < timeBlocks.length; i++) {
     $(`#${timeBlocks[i].id} .description`).val(description);
   }
 }
+
+// Current date
+  $("#currentDay").text(currentDate);
+});
+
   // Instructions
   // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
   // the code isn't run until the browser has finished rendering all the elements
