@@ -4,6 +4,17 @@ $(document).ready(function() {
   let currentHour = dayjs().format("H");
   let timeBlocks = [];
 
+  // Function to display a message upon saving event
+  function showMessage(message) {
+    // Create a div element for the message
+    let messageEl = $("<div>")
+      .addClass("alert alert-success mt-3")
+      .text(message);
+
+    // Display the message above the table
+    $("#currentDay").before(messageEl);
+  }
+
   // Time-blocks for standard business hours
   for (let i = 9; i <= 17; i++) {
     // Create a time-block object with an id, hour, and description
@@ -15,7 +26,9 @@ $(document).ready(function() {
     timeBlocks.push(timeBlock);
     
     // Create a row element for the time-block and add classes based on the current hour
-    let rowEl = $("<div>").addClass("row time-block").attr("id", timeBlock.id);
+    let rowEl = $("<div>")
+      .addClass("row time-block")
+      .attr("id", timeBlock.id);
     if (i < currentHour) {
       rowEl.addClass("past");
     } else if (i > currentHour) {
@@ -55,6 +68,8 @@ $(document).ready(function() {
     let id = $(this).parent().attr("id");
     // Store the event description in local storage with the time-block id as the key
     localStorage.setItem(id, description);
+    // Show message
+    showMessage("Appointment added to the local storage.");
   });
 
   // Load saved events from local storage
@@ -68,5 +83,5 @@ $(document).ready(function() {
   }
 
   // Set the current date in the header
-  $("#currentDay").text(currentDate);
+  $("#currentDay").text
 });
