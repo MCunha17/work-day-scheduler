@@ -33,6 +33,11 @@ let saveBtn = $("<button>")
   .addClass("btn saveBtn col-2 col-md-1")
   .attr("aria-label", "save")
   .html("<i class='fas fa-save' aria-hidden='true'></i>");
+
+// Append the elements to the row and append the row to the container
+  rowEl.append(hourEl, descriptionEl, saveBtn);
+  $(".container-fluid").append(rowEl);
+}
   
   // Instructions
   // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
