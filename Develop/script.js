@@ -1,6 +1,7 @@
 $(document).ready(function() {
   // Variables for the current date, current hour, and time-blocks
-  let currentDate = dayjs().format("dddd, MMMM D, YYYY");
+  let currentDay = dayjs().format("dddd, MMMM D, YYYY");
+  $("#currentDay").text(currentDay);
   let currentHour = dayjs().format("H");
   let timeBlocks = [];
 
