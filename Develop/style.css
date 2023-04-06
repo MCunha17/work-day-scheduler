@@ -12,8 +12,8 @@ textarea {
   padding: 10px;
 }
 
-header {
-  border-bottom: 4px solid black;
+#time-blocks-container {
+  border-top: 8px solid black;
 }
 
 .description {
