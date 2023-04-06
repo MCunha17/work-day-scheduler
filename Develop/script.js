@@ -6,12 +6,12 @@ $(function () {
 
 // Time-blocks for standard business hours
 for (let i = 9; i <= 17; i++) {
-let timeBlock = {
-id: hour-${i},
-hour: i > 12 ? ${i - 12}PM : ${i}AM,
-description: "",
-};
-timeBlocks.push(timeBlock);
+  let timeBlock = {
+    id: `hour-${i}`,
+    hour: i > 12 ? `${i - 12}PM` : `${i}AM`,
+    description: "",
+  };
+  timeBlocks.push(timeBlock);
 
 // Row for each time-block
 let rowEl = $("<div>").addClass("row time-block");
@@ -80,4 +80,3 @@ for (let i = 0; i < timeBlocks.length; i++) {
   // attribute of each time-block be used to do this?
   //
   // TODO: Add code to display the current date in the header of the page.
-});
