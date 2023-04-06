@@ -4,7 +4,7 @@ $(function () {
   let currentHour = dayjs().format("H");
   let timeBlocks = [];
 
-// Generate time-blocks for standard business hours
+// Time-blocks for standard business hours
 for (let i = 9; i <= 17; i++) {
 let timeBlock = {
 id: hour-${i},
@@ -13,7 +13,7 @@ description: "",
 };
 timeBlocks.push(timeBlock);
 
-// Create a row for each time-block and append it to the container
+// Row for each time-block
 let rowEl = $("<div>").addClass("row time-block");
 if (i < currentHour) {
   rowEl.addClass("past");
@@ -34,11 +34,19 @@ let saveBtn = $("<button>")
   .attr("aria-label", "save")
   .html("<i class='fas fa-save' aria-hidden='true'></i>");
 
-// Append the elements to the row and append the row to the container
+// Row elements
   rowEl.append(hourEl, descriptionEl, saveBtn);
   $(".container-fluid").append(rowEl);
 }
   
+// Event listeners for save button
+$(".saveBtn").on("click", function () {
+  let description = $(this).siblings(".description").val();
+  let id = $(this).parent().attr("id");
+  localStorage.setItem(id, description);
+});
+
+
   // Instructions
   // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
   // the code isn't run until the browser has finished rendering all the elements
