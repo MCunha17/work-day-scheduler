@@ -5,14 +5,31 @@ $(function () {
   let timeBlocks = [];
 
 // Generate time-blocks for standard business hours
-  for (let i = 9; i <= 17; i++) {
-    let timeBlock = {
-    id: hour-${i},
-    hour: i > 12 ? ${i - 12}PM : ${i}AM,
-    description: "",
-    };
-    timeBlocks.push(timeBlock);
-  
+for (let i = 9; i <= 17; i++) {
+let timeBlock = {
+id: hour-${i},
+hour: i > 12 ? ${i - 12}PM : ${i}AM,
+description: "",
+};
+timeBlocks.push(timeBlock);
+
+// Create a row for each time-block and append it to the container
+let rowEl = $("<div>").addClass("row time-block");
+if (i < currentHour) {
+  rowEl.addClass("past");
+} else if (i > currentHour) {
+  rowEl.addClass("future");
+} else {
+  rowEl.addClass("present");
+}
+let hourEl = $("<div>")
+  .addClass("col-2 col-md-1 hour text-center py-3")
+  .text(timeBlock.hour);
+let descriptionEl = $("<textarea>")
+  .addClass("col-8 col-md-10 description")
+  .attr("id", timeBlock.id)
+  .val(timeBlock.description);
+let saveBtn
   
   // Instructions
   // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
