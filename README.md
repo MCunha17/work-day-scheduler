@@ -1,4 +1,4 @@
-# Workday Scheduler
+# Work Day Scheduler
 ## Description
 
 This Work Day Scheduler is a web application that displays each hour of the business day, which users can add events and better plan their daily schedule.
