@@ -12,15 +12,42 @@ textarea {
   padding: 10px;
 }
 
+header {
+  border-bottom: 8px solid black;
+}
+
+/* confirmation message */
+.confirm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.confirm span {
+  color: black;
+}
+.confirm span.highlight {
+  color: red;
+}
+.green-checkmark {
+  color:green;
+}
+
 /* scheduler table style */
 #time-blocks-container {
-  border-top: 8px solid black;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 .description {
   white-space: pre-wrap;
 }
 .time-block {
   border-radius: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 .row {
   border-top: 1px solid white;
@@ -47,6 +74,10 @@ textarea {
 .future {
   background-color: #77dd77;
   color: white;
+}
+
+#storageEl {
+  color:#ff6961;
 }
 
 /* save button style */
